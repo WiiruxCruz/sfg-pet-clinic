@@ -17,5 +17,4 @@ public class Persona {
 		this.apellido = apellido;
 	}
 	
-	//comentario prueba
 }
