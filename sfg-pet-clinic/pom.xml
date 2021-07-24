@@ -51,5 +51,6 @@
 		<!-- <url>https://github.com/WiiruxCruz/sfg-pet-clinic</url> -->
 		<!-- <connection>scm:git:git@github.com:WiiruxCruz/sfg-pet-clinic.git</connection> -->
 		<developerConnection>scm:git:ssh://git@github.com:WiiruxCruz/sfg-pet-clinic.git</developerConnection>
-  </scm>
+    	<tag>sfg-pet-clinic-0.0.3</tag>
+  	</scm>
 </project>

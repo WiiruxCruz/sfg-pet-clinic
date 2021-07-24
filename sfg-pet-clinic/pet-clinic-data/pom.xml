@@ -6,6 +6,7 @@
     <version>0.0.2</version>
   </parent>
   <artifactId>pet-clinic-data</artifactId>
+  <version>0.0.2</version>
   <description>Modulo para pet-clinic-data</description>
   
   <properties>
@@ -96,6 +97,6 @@
 	</build>
 
   <scm>
-    <tag>sfg-pet-clinic-0.0.2</tag>
+    <tag>sfg-pet-clinic-0.0.3</tag>
   </scm>
 </project>
