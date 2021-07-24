@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>mx.com.wiirux</groupId>
 	<artifactId>sfg-pet-clinic</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<modules>
 		<module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
@@ -51,5 +51,6 @@
 		<!-- <url>https://github.com/WiiruxCruz/sfg-pet-clinic</url> -->
 		<!-- <connection>scm:git:git@github.com:WiiruxCruz/sfg-pet-clinic.git</connection> -->
 		<developerConnection>scm:git:ssh://git@github.com:WiiruxCruz/sfg-pet-clinic.git</developerConnection>
-  	</scm>
+  	  <tag>sfg-pet-clinic-0.0.2</tag>
+  </scm>
 </project>
