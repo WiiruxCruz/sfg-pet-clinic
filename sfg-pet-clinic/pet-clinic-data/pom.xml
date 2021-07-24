@@ -94,4 +94,8 @@
 			</plugins>
 		<!-- </pluginManagement> -->
 	</build>
+
+  <scm>
+    <tag>sfg-pet-clinic-0.0.2</tag>
+  </scm>
 </project>
