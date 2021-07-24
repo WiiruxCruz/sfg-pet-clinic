@@ -3,7 +3,7 @@
   <parent>
     <groupId>mx.com.wiirux</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
   </parent>
   <artifactId>pet-clinic-web</artifactId>
   <description>Este modulo contiene toda la aplicacion web</description>
