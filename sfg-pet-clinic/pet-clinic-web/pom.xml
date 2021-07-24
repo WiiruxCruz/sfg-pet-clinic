@@ -3,7 +3,7 @@
   <parent>
     <groupId>mx.com.wiirux</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
   </parent>
   <artifactId>pet-clinic-web</artifactId>
   <description>Este modulo contiene toda la aplicacion web</description>
@@ -12,7 +12,7 @@
   	<dependency>
   		<artifactId>pet-clinic-data</artifactId>
   		<groupId>mx.com.wiirux</groupId>
-  		<version>0.0.1</version>
+  		<version>0.0.2</version>
   	</dependency>
   	<dependency>
 		<groupId>org.springframework.boot</groupId>
