@@ -1,0 +1,5 @@
+mx\com\wiirux\sfgpetclinic\model\Persona.class
+mx\com\wiirux\sfgpetclinic\model\Mascota.class
+mx\com\wiirux\sfgpetclinic\model\Veterinario.class
+mx\com\wiirux\sfgpetclinic\model\Duenio.class
+mx\com\wiirux\sfgpetclinic\model\TipoMascota.class
