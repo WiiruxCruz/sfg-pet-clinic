@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public class Mascota {
+public class Mascota extends BaseEntity{
 	private TipoMascota tm;
 	private Duenio d;
 	private LocalDate fechaNacimiento;

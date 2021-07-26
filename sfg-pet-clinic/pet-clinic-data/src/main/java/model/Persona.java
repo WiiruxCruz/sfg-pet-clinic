@@ -1,6 +1,6 @@
 package model;
 
-public class Persona {
+public class Persona extends BaseEntity{
 	private String nombre;
 	private String apellido;
 	

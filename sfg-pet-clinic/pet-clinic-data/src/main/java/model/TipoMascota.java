@@ -1,6 +1,6 @@
 package model;
 
-public class TipoMascota {
+public class TipoMascota extends BaseEntity{
 	private String tipo;
 
 	public String getTipo() {
