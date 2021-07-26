@@ -51,6 +51,7 @@
 					-->
 					<configuration>
 						<goals>install</goals>
+						<pushChanges>false</pushChanges>
 					</configuration>
 				</plugin>
 			</plugins>
