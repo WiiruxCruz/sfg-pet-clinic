@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>mx.com.wiirux</groupId>
 	<artifactId>sfg-pet-clinic</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.4</version>
 	<modules>
 		<module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
@@ -39,6 +39,16 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
+					<!--
+					<version>2.5.1</version>
+					<dependencies>
+					  <dependency>
+					    <groupId>org.apache.maven.shared</groupId>
+					    <artifactId>maven-invoker</artifactId>
+					    <version>2.2</version>
+					  </dependency>
+					</dependencies>
+					-->
 					<configuration>
 						<goals>install</goals>
 					</configuration>
@@ -51,5 +61,6 @@
 		<!-- <url>https://github.com/WiiruxCruz/sfg-pet-clinic</url> -->
 		<!-- <connection>scm:git:git@github.com:WiiruxCruz/sfg-pet-clinic.git</connection> -->
 		<developerConnection>scm:git:ssh://git@github.com:WiiruxCruz/sfg-pet-clinic.git</developerConnection>
+    <tag>sfg-pet-clinic-0.0.4</tag>
   </scm>
 </project>

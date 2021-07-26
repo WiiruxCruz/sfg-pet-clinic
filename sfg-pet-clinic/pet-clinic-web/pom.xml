@@ -3,7 +3,7 @@
   <parent>
     <groupId>mx.com.wiirux</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.4</version>
   </parent>
   <artifactId>pet-clinic-web</artifactId>
   <version>0.0.2</version>
@@ -42,6 +42,6 @@
   </dependencies>
 
   <scm>
-    <tag>sfg-pet-clinic-0.0.2</tag>
+    <tag>sfg-pet-clinic-0.0.4</tag>
   </scm>
 </project>
