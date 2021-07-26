@@ -1,4 +1,4 @@
-package mx.com.wiirux.sfgpetclinic.model;
+package model;
 
 public class Persona {
 	private String nombre;

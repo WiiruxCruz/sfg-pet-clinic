@@ -6,7 +6,6 @@
     <version>0.0.10-SNAPSHOT</version>
   </parent>
   <artifactId>pet-clinic-data</artifactId>
-  <version>0.0.10-SNAPSHOT</version>
   <description>Modulo para pet-clinic-data</description>
   
   <properties>
