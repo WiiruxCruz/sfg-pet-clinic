@@ -3,10 +3,10 @@
   <parent>
     <groupId>mx.com.wiirux</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6-SNAPSHOT</version>
   </parent>
   <artifactId>pet-clinic-data</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3-SNAPSHOT</version>
   <description>Modulo para pet-clinic-data</description>
   
   <properties>
