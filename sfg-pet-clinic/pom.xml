@@ -52,6 +52,7 @@
 					<configuration>
 						<goals>install</goals>
 						<pushChanges>false</pushChanges>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -61,7 +62,7 @@
 	<scm>
 		<!-- <url>https://github.com/WiiruxCruz/sfg-pet-clinic</url>-->
 		<!-- <connection>scm:git:git@github.com:WiiruxCruz/sfg-pet-clinic.git</connection> -->
-		<developerConnection>scm:git:ssh://git@github.com:WiiruxCruz/sfg-pet-clinic.git</developerConnection>
-    <tag>sfg-pet-clinic-0.0.4</tag>
+		<developerConnection>scm:git:git@github.com:WiiruxCruz/sfg-pet-clinic.git</developerConnection>
+    	<tag>HEAD</tag>
   </scm>
 </project>
