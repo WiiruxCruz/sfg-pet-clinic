@@ -4,12 +4,7 @@ import java.util.Set;
 
 import mx.com.wiirux.sfgpetclinic.model.Duenio;
 
-public interface DuenioService {
+public interface DuenioService extends CrudService<Duenio, Long> {
 	Duenio buscarPorApellido(String apellido);
 	
-	Duenio buscarPorId(Long d);
-	
-	Duenio guardar(Duenio d);
-	
-	Set<Duenio> buscarTodos();
 }

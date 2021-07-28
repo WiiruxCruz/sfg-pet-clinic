@@ -1,13 +1,7 @@
 package mx.com.wiirux.sfgpetclinic.services;
 
-import java.util.Set;
-
 import mx.com.wiirux.sfgpetclinic.model.Mascota;
 
-public interface MascotaService {
-	Mascota buscarPorId(Long id);
+public interface MascotaService extends CrudService<Mascota, Long>{
 	
-	Mascota guardar(Mascota m);
-	
-	Set<Mascota> buscarTodos();
 }
