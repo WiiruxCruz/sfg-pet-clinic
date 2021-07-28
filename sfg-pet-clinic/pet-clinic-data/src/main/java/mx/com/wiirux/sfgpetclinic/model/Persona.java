@@ -1,4 +1,4 @@
-package model;
+package mx.com.wiirux.sfgpetclinic.model;
 
 public class Persona extends BaseEntity{
 	private String nombre;

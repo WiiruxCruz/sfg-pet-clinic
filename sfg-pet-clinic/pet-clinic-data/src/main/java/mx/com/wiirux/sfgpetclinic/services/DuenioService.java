@@ -1,8 +1,8 @@
-package services;
+package mx.com.wiirux.sfgpetclinic.services;
 
 import java.util.Set;
 
-import model.Duenio;
+import mx.com.wiirux.sfgpetclinic.model.Duenio;
 
 public interface DuenioService {
 	Duenio buscarPorApellido(String apellido);

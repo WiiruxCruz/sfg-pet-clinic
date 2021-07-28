@@ -1,8 +1,8 @@
-package services;
+package mx.com.wiirux.sfgpetclinic.services;
 
 import java.util.Set;
 
-import model.Veterinario;
+import mx.com.wiirux.sfgpetclinic.model.Veterinario;
 
 public interface VeterinarioService {
 	Veterinario buscarPorId(Veterinario v);

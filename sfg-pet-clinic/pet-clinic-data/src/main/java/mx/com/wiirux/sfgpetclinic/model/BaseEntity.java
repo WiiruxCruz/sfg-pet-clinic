@@ -1,4 +1,4 @@
-package model;
+package mx.com.wiirux.sfgpetclinic.model;
 
 import java.io.Serializable;
 
