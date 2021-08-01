@@ -4,6 +4,7 @@
     <groupId>mx.com.wiirux</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
     <version>0.0.10-SNAPSHOT</version>
+    <relativePath />
   </parent>
   <artifactId>pet-clinic-data</artifactId>
   <description>Modulo para pet-clinic-data</description>
@@ -64,32 +65,24 @@
   <build>
   		<!-- <pluginManagement> -->
 			<plugins>
+				<!--
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
-					
-					<!--
-					<configuration>
-						<excludes>
-							<exclude>
-								<groupId>org.projectlombok</groupId>
-								<artifactId>lombok</artifactId>
-							</exclude>
-						</excludes>
-					</configuration>
-					-->
-					
 					<executions>
 						<execution>
 							<goals>
 								<goal>repackage</goal>
 							</goals>
+							
 							<configuration>
 								<skip>true</skip>
 							</configuration>
+							
 						</execution>
 					</executions>
 				</plugin>
+				-->
 				
 			</plugins>
 		<!-- </pluginManagement> -->

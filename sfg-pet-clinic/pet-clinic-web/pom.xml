@@ -4,6 +4,7 @@
     <groupId>mx.com.wiirux</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
     <version>0.0.10-SNAPSHOT</version>
+    <relativePath />
   </parent>
   <artifactId>pet-clinic-web</artifactId>
   <description>Este modulo contiene toda la aplicacion web</description>
