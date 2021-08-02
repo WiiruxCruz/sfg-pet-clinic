@@ -23,9 +23,6 @@
 	
 	<properties>
 		<java.version>1.8</java.version>
-		<!--
-		<mainClass>mx.com.wiirux.sfgpetclinic.SfgPetClinicApplication</mainClass>
-		-->
 	</properties>
 
 	<build>
@@ -36,16 +33,6 @@
 					<artifactId>spring-boot-maven-plugin</artifactId>
 					<configuration>
 						<mainClass>mx.com.wiirux.sfgpetclinic.SfgPetClinicApplication</mainClass>
-						<!--
-						<mainClass>pet-clinic-web.mx.com.wiirux.sfgpetclinic.SfgPetClinicApplication</mainClass>
-						-->
-						<!--
-						<mainClass>mx/com/wiirux/sfgpetclinic/SfgPetClinicApplication</mainClass>
-						-->
-						<!--
-						<mainClass>sfg-pet-clinic/pet-clinic-web/src/main/java/mx/com/wiirux/sfgpetclinic/SfgPetClinicApplication</mainClass>
-						-->
-						
 						<excludes>
 							<exclude>
 								<groupId>org.projectlombok</groupId>
