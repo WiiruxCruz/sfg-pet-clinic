@@ -1,0 +1,14 @@
+mx\com\wiirux\sfgpetclinic\services\map\MascotaSercviceMap.class
+mx\com\wiirux\sfgpetclinic\services\VeterinarioService.class
+mx\com\wiirux\sfgpetclinic\model\TipoMascota.class
+mx\com\wiirux\sfgpetclinic\services\CrudService.class
+mx\com\wiirux\sfgpetclinic\model\Persona.class
+mx\com\wiirux\sfgpetclinic\services\MascotaService.class
+mx\com\wiirux\sfgpetclinic\services\map\AbstractMapService.class
+mx\com\wiirux\sfgpetclinic\model\Mascota.class
+mx\com\wiirux\sfgpetclinic\model\Veterinario.class
+mx\com\wiirux\sfgpetclinic\services\map\DuenioServiceMap.class
+mx\com\wiirux\sfgpetclinic\model\BaseEntity.class
+mx\com\wiirux\sfgpetclinic\model\Duenio.class
+mx\com\wiirux\sfgpetclinic\services\DuenioService.class
+mx\com\wiirux\sfgpetclinic\services\map\VeterinarioServiceMap.class
