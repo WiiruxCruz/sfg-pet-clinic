@@ -3,11 +3,13 @@ package mx.com.wiirux.sfgpetclinic.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@RequestMapping("/duenios")
 @Controller
-public class MascotaController {
+public class DuenioController {
 	
-	@RequestMapping({"/mascotas", "/mascotas/index", "/mascotas/index.html"})
-	public String listaMascotas() {
-		return "mascotas/index";
+	@RequestMapping({"","/","/index","/index.html"})
+	public String listaDuenios() {
+		
+		return "duenios/index";
 	}
 }
