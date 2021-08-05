@@ -4,8 +4,9 @@ import java.util.Set;
 
 import mx.com.wiirux.sfgpetclinic.model.Veterinario;
 import mx.com.wiirux.sfgpetclinic.services.CrudService;
+import mx.com.wiirux.sfgpetclinic.services.VeterinarioService;
 
-public class VeterinarioServiceMap extends AbstractMapService<Veterinario, Long> implements CrudService<Veterinario, Long>{
+public class VeterinarioServiceMap extends AbstractMapService<Veterinario, Long> implements VeterinarioService{
 	
 	@Override
 	public Set<Veterinario> findAll() {

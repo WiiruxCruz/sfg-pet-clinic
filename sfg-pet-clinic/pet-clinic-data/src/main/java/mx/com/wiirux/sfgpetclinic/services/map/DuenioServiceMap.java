@@ -4,8 +4,9 @@ import java.util.Set;
 
 import mx.com.wiirux.sfgpetclinic.model.Duenio;
 import mx.com.wiirux.sfgpetclinic.services.CrudService;
+import mx.com.wiirux.sfgpetclinic.services.DuenioService;
 
-public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implements CrudService<Duenio, Long>{
+public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implements DuenioService{
 
 	@Override
 	public Set<Duenio> findAll() {
@@ -19,11 +20,13 @@ public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implement
 		return super.findById(id);
 	}
 
+	
 	@Override
 	public Duenio save(Duenio object) {
 		// TODO Auto-generated method stub
 		return super.save(object.getId(), object);
 	}
+	
 
 	@Override
 	public void deleteById(Long id) {
@@ -35,6 +38,12 @@ public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implement
 	public void delete(Duenio object) {
 		// TODO Auto-generated method stub
 		super.delete(object);
+	}
+
+	@Override
+	public Duenio buscarPorApellido(String apellido) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
