@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Veterinarios</title>
+</head>
+<body>
+	<!--/*@thymesVar id="veterinario" type="mx.com.wiirux.sfgpetclinic.model.Veterinario"*/-->
+	<h1 th:text="'Lista de Veterinarios'">Lista de Veterinarios...</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="veterinario : ${veterinarios}">
+				<td th:text="${veterinario.id}">1</td>
+				<td th:text="${veterinario.nombre}">Joe</td>
+				<td th:text="${veterinario.apellido}">Buck</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
