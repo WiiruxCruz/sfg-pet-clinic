@@ -25,7 +25,7 @@ public class VeterinarioServiceMap extends AbstractMapService<Veterinario, Long>
 	@Override
 	public Veterinario save(Veterinario object) {
 		// TODO Auto-generated method stub
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 
 	@Override

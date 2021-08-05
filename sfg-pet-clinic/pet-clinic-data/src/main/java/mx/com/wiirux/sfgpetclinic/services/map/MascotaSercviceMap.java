@@ -25,7 +25,7 @@ public class MascotaSercviceMap extends AbstractMapService<Mascota, Long> implem
 	@Override
 	public Mascota save(Mascota object) {
 		// TODO Auto-generated method stub
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 
 	@Override

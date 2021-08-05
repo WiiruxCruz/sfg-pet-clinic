@@ -25,7 +25,7 @@ public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implement
 	@Override
 	public Duenio save(Duenio object) {
 		// TODO Auto-generated method stub
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 	
 
