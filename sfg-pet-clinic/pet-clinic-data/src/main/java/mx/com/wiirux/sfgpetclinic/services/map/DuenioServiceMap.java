@@ -3,9 +3,10 @@ package mx.com.wiirux.sfgpetclinic.services.map;
 import java.util.Set;
 
 import mx.com.wiirux.sfgpetclinic.model.Duenio;
-import mx.com.wiirux.sfgpetclinic.services.CrudService;
 import mx.com.wiirux.sfgpetclinic.services.DuenioService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implements DuenioService{
 
 	@Override

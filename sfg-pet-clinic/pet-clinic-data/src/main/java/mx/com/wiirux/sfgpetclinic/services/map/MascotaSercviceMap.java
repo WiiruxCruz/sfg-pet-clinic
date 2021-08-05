@@ -3,9 +3,11 @@ package mx.com.wiirux.sfgpetclinic.services.map;
 import java.util.Set;
 
 import mx.com.wiirux.sfgpetclinic.model.Mascota;
-import mx.com.wiirux.sfgpetclinic.services.CrudService;
 import mx.com.wiirux.sfgpetclinic.services.MascotaService;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MascotaSercviceMap extends AbstractMapService<Mascota, Long> implements MascotaService{
 	
 	@Override

@@ -1,5 +1,6 @@
 package mx.com.wiirux.sfgpetclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -7,8 +8,6 @@ import mx.com.wiirux.sfgpetclinic.model.Duenio;
 import mx.com.wiirux.sfgpetclinic.model.Veterinario;
 import mx.com.wiirux.sfgpetclinic.services.DuenioService;
 import mx.com.wiirux.sfgpetclinic.services.VeterinarioService;
-import mx.com.wiirux.sfgpetclinic.services.map.DuenioServiceMap;
-import mx.com.wiirux.sfgpetclinic.services.map.VeterinarioServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner{
@@ -17,9 +16,10 @@ public class DataLoader implements CommandLineRunner{
 	private final VeterinarioService vs;
 	
 	
-	public DataLoader() {
-		this.ds = new DuenioServiceMap();
-		this.vs = new VeterinarioServiceMap();
+	@Autowired
+	public DataLoader(DuenioService ds, VeterinarioService vs) {
+		this.ds = ds;
+		this.vs = vs;
 	}
 
 	@Override

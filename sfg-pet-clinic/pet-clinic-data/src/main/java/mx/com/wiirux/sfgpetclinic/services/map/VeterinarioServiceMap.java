@@ -3,9 +3,11 @@ package mx.com.wiirux.sfgpetclinic.services.map;
 import java.util.Set;
 
 import mx.com.wiirux.sfgpetclinic.model.Veterinario;
-import mx.com.wiirux.sfgpetclinic.services.CrudService;
 import mx.com.wiirux.sfgpetclinic.services.VeterinarioService;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class VeterinarioServiceMap extends AbstractMapService<Veterinario, Long> implements VeterinarioService{
 	
 	@Override
