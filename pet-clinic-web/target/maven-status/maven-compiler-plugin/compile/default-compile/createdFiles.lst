@@ -1,6 +1,6 @@
+mx\com\wiirux\sfgpetclinic\controllers\IndexController.class
+mx\com\wiirux\sfgpetclinic\bootstrap\DataLoader.class
+mx\com\wiirux\sfgpetclinic\SfgPetClinicApplication.class
 mx\com\wiirux\sfgpetclinic\controllers\DuenioController.class
 mx\com\wiirux\sfgpetclinic\controllers\VeterinarioController.class
 mx\com\wiirux\sfgpetclinic\controllers\MascotaController.class
-mx\com\wiirux\sfgpetclinic\bootstrap\DataLoader.class
-mx\com\wiirux\sfgpetclinic\controllers\IndexController.class
-mx\com\wiirux\sfgpetclinic\SfgPetClinicApplication.class
