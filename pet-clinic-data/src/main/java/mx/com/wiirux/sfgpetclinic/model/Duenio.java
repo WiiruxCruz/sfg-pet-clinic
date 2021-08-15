@@ -1,5 +1,6 @@
 package mx.com.wiirux.sfgpetclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Duenio extends Persona {
@@ -8,7 +9,7 @@ public class Duenio extends Persona {
 	private String ciudad;
 	private String telefono;
 	
-	private Set<Mascota> mascotas;
+	private Set<Mascota> mascotas = new HashSet<>();
 
 	public String getDireccion() {
 		return direccion;
