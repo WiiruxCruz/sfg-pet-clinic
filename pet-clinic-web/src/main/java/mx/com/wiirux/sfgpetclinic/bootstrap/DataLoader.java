@@ -7,10 +7,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import mx.com.wiirux.sfgpetclinic.model.Duenio;
+import mx.com.wiirux.sfgpetclinic.model.Especialidad;
 import mx.com.wiirux.sfgpetclinic.model.Mascota;
 import mx.com.wiirux.sfgpetclinic.model.TipoMascota;
 import mx.com.wiirux.sfgpetclinic.model.Veterinario;
 import mx.com.wiirux.sfgpetclinic.services.DuenioService;
+import mx.com.wiirux.sfgpetclinic.services.EspecialidadService;
 import mx.com.wiirux.sfgpetclinic.services.TipoMascotaService;
 import mx.com.wiirux.sfgpetclinic.services.VeterinarioService;
 
@@ -20,19 +22,28 @@ public class DataLoader implements CommandLineRunner{
 	private final DuenioService ds;
 	private final VeterinarioService vs;
 	private final TipoMascotaService tms;
+	private final EspecialidadService es;
 	
 	
 	@Autowired
-	public DataLoader(DuenioService ds, VeterinarioService vs, TipoMascotaService tms) {
+	public DataLoader(DuenioService ds, VeterinarioService vs, TipoMascotaService tms, EspecialidadService es) {
 		this.ds = ds;
 		this.vs = vs;
 		this.tms = tms;
+		this.es = es;
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
+		int count = tms.findAll().size();
 		
+		if(count == 0) {
+			loadData();
+		}
+	}
+	
+	private void loadData() {
 		TipoMascota perro = new TipoMascota();
 		perro.setTipo("perro");
 		TipoMascota savedDogPetTipoMascota = tms.save(perro);
@@ -41,6 +52,23 @@ public class DataLoader implements CommandLineRunner{
 		perro.setTipo("gato");
 		TipoMascota savedCatPetTipoMascota = tms.save(gato);
 		System.out.println("Mascotas cargadas...");
+		
+		Especialidad radiologia = new Especialidad();
+		radiologia.setDescription("Radiología");
+		
+		Especialidad savedRadiologia = es.save(radiologia);
+		
+		Especialidad cirugia = new Especialidad();
+		cirugia.setDescription("Cirugia");
+		
+		Especialidad savedCirugia = es.save(cirugia);
+		
+		Especialidad dentista = new Especialidad();
+		dentista.setDescription("dentista");
+		
+		Especialidad savedDentista = es.save(dentista);
+		
+		System.out.println("Especialidades cargadas...");
 		
 		Duenio d1 = new Duenio();
 		d1.setId(1L);
@@ -82,6 +110,7 @@ public class DataLoader implements CommandLineRunner{
 		v1.setId(1L);
 		v1.setNombre("Sam");
 		v1.setApellido("Axe");
+		v1.getEspecialidades().add(savedRadiologia);
 		
 		vs.save(v1);
 		
@@ -89,11 +118,11 @@ public class DataLoader implements CommandLineRunner{
 		v2.setId(2L);
 		v2.setNombre("Jessie");
 		v2.setApellido("Porter");
+		v2.getEspecialidades().add(savedCirugia);
 		
 		vs.save(v2);
 		
 		System.out.println("Veterinarios cargados...");
-		
 	}
 
 }
