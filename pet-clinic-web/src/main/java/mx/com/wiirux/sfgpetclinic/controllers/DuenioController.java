@@ -23,4 +23,9 @@ public class DuenioController {
 		
 		return "duenios/index";
 	}
+	
+	@RequestMapping("/buscar")
+	public String buscarDuenios() {
+		return "noImplementado";
+	}
 }

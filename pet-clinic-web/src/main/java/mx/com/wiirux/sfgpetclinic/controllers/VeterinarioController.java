@@ -14,7 +14,7 @@ public class VeterinarioController {
 		this.vs = vs;
 	}
 	
-	@RequestMapping({"/veterinarios","/veterinarios/index","/veterinarios/index.html"})
+	@RequestMapping({"/veterinarios","/veterinarios/index","/veterinarios/index.html", "/veterinarios.html"})
 	public String listaVeterinarios(Model m) {
 		
 		m.addAttribute("veterinarios", vs.findAll());
