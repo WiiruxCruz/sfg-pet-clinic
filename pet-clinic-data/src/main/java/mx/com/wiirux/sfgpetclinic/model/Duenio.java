@@ -3,12 +3,26 @@ package mx.com.wiirux.sfgpetclinic.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "duenios")
 public class Duenio extends Persona {
 	
+	@Column(name = "direccion")
 	private String direccion;
+	
+	@Column(name = "ciudad")
 	private String ciudad;
+	
+	@Column(name = "telefono")
 	private String telefono;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "duenio")
 	private Set<Mascota> mascotas = new HashSet<>();
 
 	public String getDireccion() {
