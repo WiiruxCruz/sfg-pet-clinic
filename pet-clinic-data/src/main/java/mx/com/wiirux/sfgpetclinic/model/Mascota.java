@@ -1,11 +1,15 @@
 package mx.com.wiirux.sfgpetclinic.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +29,9 @@ public class Mascota extends BaseEntity{
 	
 	@Column(name = "fechaNacimiento")
 	private LocalDate fechaNacimiento;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "mascota")
+	private Set<Visita> visitas = new HashSet<>();
 	
 	
 	public String getNombre() {
@@ -51,6 +58,10 @@ public class Mascota extends BaseEntity{
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
-	
+	public Set<Visita> getVisitas() {
+		return visitas;
+	}
+	public void setVisitas(Set<Visita> visitas) {
+		this.visitas = visitas;
+	}
 }

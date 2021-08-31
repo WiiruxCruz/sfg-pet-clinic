@@ -2,9 +2,24 @@ package mx.com.wiirux.sfgpetclinic.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "visita")
 public class Visita extends BaseEntity{
+	
+	@Column(name = "fecha")
 	private LocalDate date;
+	
+	@Column(name = "descripcion")
 	private String descripcion;
+	
+	@ManyToOne
+	@JoinColumn(name = "mascota_id")
 	private Mascota mascota;
 	
 	public LocalDate getDate() {
