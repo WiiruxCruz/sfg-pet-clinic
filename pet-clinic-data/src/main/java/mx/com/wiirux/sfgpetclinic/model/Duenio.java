@@ -24,6 +24,8 @@ public class Duenio extends Persona {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "duenio")
 	private Set<Mascota> mascotas = new HashSet<>();
+	
+	//private String buscarPorApellido;
 
 	public String getDireccion() {
 		return direccion;
@@ -56,6 +58,17 @@ public class Duenio extends Persona {
 	public void setMascotas(Set<Mascota> mascotas) {
 		this.mascotas = mascotas;
 	}
+	
+	/*
+	 * Metodo de prueba para ver que funciona con JPA, descomentar en DuenioRepository
+	public String getBuscarPorApellido() {
+		return buscarPorApellido;
+	}
+
+	public void setBuscarPorApellido(String buscarPorApellido) {
+		this.buscarPorApellido = buscarPorApellido;
+	}
+	*/
 	
 	
 }
