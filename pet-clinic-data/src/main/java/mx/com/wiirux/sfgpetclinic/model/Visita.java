@@ -37,7 +37,7 @@ public class Visita extends BaseEntity{
 	public Mascota getMascota() {
 		return mascota;
 	}
-	public void setM(Mascota mascota) {
+	public void setMascota(Mascota mascota) {
 		this.mascota = mascota;
 	}
 	

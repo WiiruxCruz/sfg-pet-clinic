@@ -8,7 +8,7 @@ import mx.com.wiirux.sfgpetclinic.model.TipoMascota;
 import mx.com.wiirux.sfgpetclinic.services.TipoMascotaService;
 
 @Service
-public class TipoMascotaMapServiceMap extends AbstractMapService<TipoMascota, Long> implements TipoMascotaService{
+public class TipoMascotaServiceMap extends AbstractMapService<TipoMascota, Long> implements TipoMascotaService{
 
 	@Override
 	public Set<TipoMascota> findAll() {
