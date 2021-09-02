@@ -8,7 +8,7 @@ import mx.com.wiirux.sfgpetclinic.services.MascotaService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MascotaSercviceMap extends AbstractMapService<Mascota, Long> implements MascotaService{
+public class MascotaServiceMap extends AbstractMapService<Mascota, Long> implements MascotaService{
 	
 	@Override
 	public Set<Mascota> findAll() {

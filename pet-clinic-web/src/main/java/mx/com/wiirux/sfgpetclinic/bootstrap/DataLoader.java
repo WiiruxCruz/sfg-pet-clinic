@@ -11,10 +11,12 @@ import mx.com.wiirux.sfgpetclinic.model.Especialidad;
 import mx.com.wiirux.sfgpetclinic.model.Mascota;
 import mx.com.wiirux.sfgpetclinic.model.TipoMascota;
 import mx.com.wiirux.sfgpetclinic.model.Veterinario;
+import mx.com.wiirux.sfgpetclinic.model.Visita;
 import mx.com.wiirux.sfgpetclinic.services.DuenioService;
 import mx.com.wiirux.sfgpetclinic.services.EspecialidadService;
 import mx.com.wiirux.sfgpetclinic.services.TipoMascotaService;
 import mx.com.wiirux.sfgpetclinic.services.VeterinarioService;
+import mx.com.wiirux.sfgpetclinic.services.VisitaService;
 
 @Component
 public class DataLoader implements CommandLineRunner{
@@ -23,14 +25,16 @@ public class DataLoader implements CommandLineRunner{
 	private final VeterinarioService vs;
 	private final TipoMascotaService tms;
 	private final EspecialidadService es;
+	private final VisitaService vis;
 	
 	
 	@Autowired
-	public DataLoader(DuenioService ds, VeterinarioService vs, TipoMascotaService tms, EspecialidadService es) {
+	public DataLoader(DuenioService ds, VeterinarioService vs, TipoMascotaService tms, EspecialidadService es, VisitaService vis) {
 		this.ds = ds;
 		this.vs = vs;
 		this.tms = tms;
 		this.es = es;
+		this.vis = vis;
 	}
 
 	@Override
@@ -103,6 +107,12 @@ public class DataLoader implements CommandLineRunner{
 		d2.getMascotas().add(m2);
 		
 		ds.save(d2);
+		
+		Visita vi2 = new Visita();
+		vi2.setMascota(m2);
+		vi2.setDate(LocalDate.now());
+		vi2.setDescripcion("Gatito visita");
+		vis.save(vi2);
 		
 		System.out.println("Duenios cargados...");
 		
