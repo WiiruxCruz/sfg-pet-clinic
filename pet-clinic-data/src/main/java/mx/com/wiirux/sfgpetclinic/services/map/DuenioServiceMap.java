@@ -8,9 +8,11 @@ import mx.com.wiirux.sfgpetclinic.services.DuenioService;
 import mx.com.wiirux.sfgpetclinic.services.MascotaService;
 import mx.com.wiirux.sfgpetclinic.services.TipoMascotaService;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default","map"})
 public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implements DuenioService{
 
 	private final TipoMascotaService tms;

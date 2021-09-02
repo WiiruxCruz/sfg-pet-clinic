@@ -7,9 +7,11 @@ import mx.com.wiirux.sfgpetclinic.model.Veterinario;
 import mx.com.wiirux.sfgpetclinic.services.EspecialidadService;
 import mx.com.wiirux.sfgpetclinic.services.VeterinarioService;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default","map"})
 public class VeterinarioServiceMap extends AbstractMapService<Veterinario, Long> implements VeterinarioService{
 	
 	private final EspecialidadService es;

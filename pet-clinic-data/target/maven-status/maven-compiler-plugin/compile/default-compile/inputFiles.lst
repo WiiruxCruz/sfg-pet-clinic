@@ -1,5 +1,7 @@
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\VeterinarioServiceMap.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\VisitServiceMap.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\repositories\DuenioRepository.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\MascotaServiceMap.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\repositories\VisitaRepository.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\model\Veterinario.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\repositories\VeterinarioRepository.java
@@ -9,13 +11,16 @@ C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sf
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\model\BaseEntity.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\EspecialidadService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\model\Especialidad.java
-C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\MascotaSercviceMap.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\model\Mascota.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\springdatajpa\DuenioSDJpaService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\model\Visita.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\EspecialidadServiceMap.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\springdatajpa\VeterinarioSDJpaService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\model\Persona.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\springdatajpa\MascotaSDJpaService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\repositories\MascotaRepository.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\VisitaService.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\TipoMascotaServiceMap.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\MascotaService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\TipoMascotaService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\VeterinarioService.java
@@ -23,5 +28,7 @@ C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sf
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\DuenioServiceMap.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\CrudService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\repositories\EspecialidadRepository.java
-C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\map\TipoMascotaMapServiceMap.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\springdatajpa\EspecialidadSDJpaService.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\springdatajpa\TipoMascotaSDJpaService.java
+C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\springdatajpa\VisitaSDJpaService.java
 C:\Users\wii64\git\sfg-pet-clinic\pet-clinic-data\src\main\java\mx\com\wiirux\sfgpetclinic\services\DuenioService.java

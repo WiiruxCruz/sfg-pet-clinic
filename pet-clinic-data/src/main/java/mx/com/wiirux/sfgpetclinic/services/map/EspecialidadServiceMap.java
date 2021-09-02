@@ -2,12 +2,14 @@ package mx.com.wiirux.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import mx.com.wiirux.sfgpetclinic.model.Especialidad;
 import mx.com.wiirux.sfgpetclinic.services.EspecialidadService;
 
 @Service
+@Profile({"default","map"})
 public class EspecialidadServiceMap extends AbstractMapService<Especialidad, Long> implements EspecialidadService{
 
 	@Override

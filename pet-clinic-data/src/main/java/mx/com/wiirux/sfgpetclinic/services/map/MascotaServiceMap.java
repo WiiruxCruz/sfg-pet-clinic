@@ -5,9 +5,11 @@ import java.util.Set;
 import mx.com.wiirux.sfgpetclinic.model.Mascota;
 import mx.com.wiirux.sfgpetclinic.services.MascotaService;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default","map"})
 public class MascotaServiceMap extends AbstractMapService<Mascota, Long> implements MascotaService{
 	
 	@Override

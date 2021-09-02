@@ -2,6 +2,7 @@ package mx.com.wiirux.sfgpetclinic.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -18,7 +19,8 @@ public class Visita extends BaseEntity{
 	@Column(name = "descripcion")
 	private String descripcion;
 	
-	@ManyToOne
+	
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "mascota_id")
 	private Mascota mascota;
 	
