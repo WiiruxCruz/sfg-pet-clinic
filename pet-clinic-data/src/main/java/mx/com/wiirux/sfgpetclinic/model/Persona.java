@@ -3,6 +3,15 @@ package mx.com.wiirux.sfgpetclinic.model;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @MappedSuperclass
 public class Persona extends BaseEntity{
 	@Column(name = "nombre")
@@ -10,18 +19,13 @@ public class Persona extends BaseEntity{
 	
 	@Column(name = "apellido")
 	private String apellido;
-	
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
+
+	public Persona(Long id, String nombre, String apellido) {
+		super(id);
 		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+	
+	
 	
 }

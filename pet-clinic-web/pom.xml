@@ -18,12 +18,12 @@
   </properties>
   
   <dependencies>
-  	<dependency>
-  		<artifactId>pet-clinic-data</artifactId>
-  		<groupId>mx.com.wiirux</groupId>
-  		<version>0.0.12-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
+ 	<dependency>
+ 		<artifactId>pet-clinic-data</artifactId>
+ 		<groupId>mx.com.wiirux</groupId>
+ 		<version>0.0.12-SNAPSHOT</version>
+ 	</dependency>
+ 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-actuator</artifactId>
 	</dependency>
@@ -35,6 +35,13 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
+	<!--
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<optional>true</optional>
+	</dependency>
+	-->
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-devtools</artifactId>
@@ -43,26 +50,26 @@
 	</dependency>
 	
 	<!-- webjars -->
-    <dependency>
-      <groupId>org.webjars</groupId>
-      <artifactId>webjars-locator-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.webjars</groupId>
-      <artifactId>jquery</artifactId>
-      <version>${webjars-jquery.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.webjars</groupId>
-      <artifactId>jquery-ui</artifactId>
-      <version>${webjars-jquery-ui.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.webjars</groupId>
-      <artifactId>bootstrap</artifactId>
-      <version>${webjars-bootstrap.version}</version>
-    </dependency>
-    <!-- end of webjars -->
+	<dependency>
+		<groupId>org.webjars</groupId>
+		<artifactId>webjars-locator-core</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.webjars</groupId>
+		<artifactId>jquery</artifactId>
+		<version>${webjars-jquery.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.webjars</groupId>
+		<artifactId>jquery-ui</artifactId>
+		<version>${webjars-jquery-ui.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.webjars</groupId>
+		<artifactId>bootstrap</artifactId>
+		<version>${webjars-bootstrap.version}</version>
+	</dependency>
+	<!-- end of webjars -->
 	
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
@@ -80,7 +87,6 @@
         <executions>
           <execution>
             <phase>generate-resources</phase>
-            <?m2e execute onConfiguration,onIncremental?>
             <goals>
               <goal>run</goal>
             </goals>

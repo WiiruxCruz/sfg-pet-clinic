@@ -1,6 +1,7 @@
 package mx.com.wiirux.sfgpetclinic.model;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "visita")
 public class Visita extends BaseEntity{
@@ -19,29 +31,8 @@ public class Visita extends BaseEntity{
 	@Column(name = "descripcion")
 	private String descripcion;
 	
-	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "mascota_id")
 	private Mascota mascota;
 	
-	public LocalDate getDate() {
-		return date;
-	}
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-	public Mascota getMascota() {
-		return mascota;
-	}
-	public void setMascota(Mascota mascota) {
-		this.mascota = mascota;
-	}
-	
-	 
 }

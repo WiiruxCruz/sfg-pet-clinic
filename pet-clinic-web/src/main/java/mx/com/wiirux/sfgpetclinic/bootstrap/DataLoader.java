@@ -82,6 +82,9 @@ public class DataLoader implements CommandLineRunner{
 		d1.setCiudad("Veracruz");
 		d1.setTelefono("2291036258");
 		
+		Duenio d3 = Duenio.builder().ciudad("das").id((long) 3).nombre("").build();
+		System.out.println("d3" + d3.getCiudad());
+		
 		Mascota m1 = new Mascota();
 		m1.setTipoMascota(savedDogPetTipoMascota);
 		m1.setDuenio(d1);

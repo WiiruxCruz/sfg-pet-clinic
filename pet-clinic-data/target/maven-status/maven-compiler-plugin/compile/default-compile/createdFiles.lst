@@ -16,7 +16,9 @@ mx\com\wiirux\sfgpetclinic\services\springdatajpa\VeterinarioSDJpaService.class
 mx\com\wiirux\sfgpetclinic\services\springdatajpa\MascotaSDJpaService.class
 mx\com\wiirux\sfgpetclinic\model\Especialidad.class
 mx\com\wiirux\sfgpetclinic\services\springdatajpa\DuenioSDJpaService.class
+mx\com\wiirux\sfgpetclinic\model\Duenio$DuenioBuilder.class
 mx\com\wiirux\sfgpetclinic\services\map\VisitServiceMap.class
+mx\com\wiirux\sfgpetclinic\model\Mascota$MascotaBuilder.class
 mx\com\wiirux\sfgpetclinic\services\springdatajpa\VisitaSDJpaService.class
 mx\com\wiirux\sfgpetclinic\repositories\MascotaRepository.class
 mx\com\wiirux\sfgpetclinic\services\CrudService.class
@@ -24,11 +26,15 @@ mx\com\wiirux\sfgpetclinic\model\Persona.class
 mx\com\wiirux\sfgpetclinic\repositories\VisitaRepository.class
 mx\com\wiirux\sfgpetclinic\services\map\AbstractMapService.class
 mx\com\wiirux\sfgpetclinic\model\Mascota.class
+mx\com\wiirux\sfgpetclinic\model\Veterinario$VeterinarioBuilder.class
 mx\com\wiirux\sfgpetclinic\services\map\TipoMascotaServiceMap.class
 mx\com\wiirux\sfgpetclinic\model\BaseEntity.class
 mx\com\wiirux\sfgpetclinic\model\Duenio.class
+mx\com\wiirux\sfgpetclinic\model\Visita$VisitaBuilder.class
 mx\com\wiirux\sfgpetclinic\services\EspecialidadService.class
 mx\com\wiirux\sfgpetclinic\services\map\MascotaServiceMap.class
+mx\com\wiirux\sfgpetclinic\model\TipoMascota$TipoMascotaBuilder.class
 mx\com\wiirux\sfgpetclinic\services\DuenioService.class
 mx\com\wiirux\sfgpetclinic\services\springdatajpa\EspecialidadSDJpaService.class
 mx\com\wiirux\sfgpetclinic\services\map\VeterinarioServiceMap.class
+mx\com\wiirux\sfgpetclinic\model\Especialidad$EspecialidadBuilder.class

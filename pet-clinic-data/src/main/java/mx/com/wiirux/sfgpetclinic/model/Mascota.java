@@ -12,6 +12,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "mascota")
 public class Mascota extends BaseEntity{
@@ -33,35 +44,4 @@ public class Mascota extends BaseEntity{
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "mascota")
 	private Set<Visita> visitas = new HashSet<>();
 	
-	
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public TipoMascota getTipoMascota() {
-		return tipoMascota;
-	}
-	public void setTipoMascota(TipoMascota tipoMascota) {
-		this.tipoMascota = tipoMascota;
-	}
-	public Duenio getDuenio() {
-		return duenio;
-	}
-	public void setDuenio(Duenio duenio) {
-		this.duenio = duenio;
-	}
-	public LocalDate getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-	public void setFechaNacimiento(LocalDate fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
-	public Set<Visita> getVisitas() {
-		return visitas;
-	}
-	public void setVisitas(Set<Visita> visitas) {
-		this.visitas = visitas;
-	}
 }
