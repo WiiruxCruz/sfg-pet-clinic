@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,9 +16,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
 @Table(name = "duenio")
 public class Duenio extends Persona {
@@ -36,8 +33,8 @@ public class Duenio extends Persona {
 	private Set<Mascota> mascotas = new HashSet<>();
 
 	@Builder
-	public Duenio(Long id, String nombre, String apellido, String direccion, String ciudad, String telefono,
-			Set<Mascota> mascotas) {
+	public Duenio(Long id, String nombre, String apellido, String direccion, String ciudad,
+			String telefono, Set<Mascota> mascotas) {
 		super(id, nombre, apellido);
 		this.direccion = direccion;
 		this.ciudad = ciudad;
