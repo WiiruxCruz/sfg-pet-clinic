@@ -32,7 +32,7 @@ jobs:
         # This is necessary to make petclinic-data-XXX.jar "visible" to petclinic-web
         # From: http://maven.40175.n5.nabble.com/Re-dependency-go-offline-broken-tp5914643p5915059.html
 
-      #- run: mvn install -DskipTests=true
+      - run: mvn install -DskipTests=true
       - run: mvn dependency:go-offline
 
       - save_cache:
@@ -41,4 +41,4 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # run tests!
-      - run: mvn install
+      - run: mvn integration-test
