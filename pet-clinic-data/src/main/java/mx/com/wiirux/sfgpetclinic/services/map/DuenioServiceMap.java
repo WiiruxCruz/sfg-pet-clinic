@@ -84,7 +84,15 @@ public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implement
 	@Override
 	public Duenio buscarPorApellido(String apellido) {
 		// TODO Auto-generated method stub
-		return null;
+		int numero = this.findAll().size();
+		Set<Duenio> listado = this.findAll();
+		
+		return this.findAll()
+				.stream()
+				.filter( duenio -> duenio.getApellido().equalsIgnoreCase(apellido) )
+				.findFirst()
+				.orElse(null)
+				;
 	}
 	
 	
