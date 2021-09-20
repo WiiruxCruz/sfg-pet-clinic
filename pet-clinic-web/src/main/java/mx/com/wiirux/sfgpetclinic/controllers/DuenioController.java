@@ -2,7 +2,9 @@ package mx.com.wiirux.sfgpetclinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,6 +20,11 @@ public class DuenioController {
 	public DuenioController(DuenioService ds) {
 		// TODO Auto-generated constructor stub
 		this.ds = ds;
+	}
+	
+	@InitBinder
+	public void establecerCamposPermitidos(WebDataBinder dataBinder) {
+		dataBinder.setDisallowedFields("id");
 	}
 	
 	@RequestMapping({"","/","/index","/index.html"})
