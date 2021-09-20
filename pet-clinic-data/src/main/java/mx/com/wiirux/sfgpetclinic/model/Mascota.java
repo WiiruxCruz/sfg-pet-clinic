@@ -24,7 +24,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "mascota")
+@Table(name = "mascotas")
 public class Mascota extends BaseEntity{
 	
 	@Column(name = "nombre")

@@ -7,11 +7,16 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.hasProperty;
+import static org.mockito.ArgumentMatchers.anyLong;
 
 import java.util.HashSet;
 import java.util.Set;
 
+import org.hamcrest.Matchers;
+import org.hibernate.hql.internal.ast.tree.IsNotNullLogicOperatorNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -80,5 +85,15 @@ class DuenioControllerTest {
 		
 		verifyZeroInteractions(ds);
 	}
-
+	
+	@Test
+	void testMostrarDuenio() throws Exception {
+		when(ds.findById(anyLong())).thenReturn(Duenio.builder().id(1L).build());
+		
+		mockMvc.perform( get("/duenios/123") )
+		.andExpect( status().isOk() )
+		.andExpect( view().name("duenios/duenioDetalle") )
+		.andExpect( model().attribute("duenio", hasProperty("id", is(1L) ) ) )
+		;
+	}
 }

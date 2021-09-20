@@ -22,5 +22,11 @@ import lombok.Setter;
 public class TipoMascota extends BaseEntity{
 	@Column(name = "tipo")
 	private String tipo;
+
+	@Override
+	public String toString() {
+		return tipo;
+	}
+	
 	
 }

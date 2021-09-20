@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html
+	lang="es"
+	xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'duenios')}"
+>
+	<head>
+		<meta charset="UTF-8">
+		<title>Detalle de duenio</title>
+	</head>
+	<body>
+  		<h2>Owner Information</h2>
+  		<table class="table table-striped" th:object="${duenio}">
+			<tr>
+				<th>Name</th>
+				<td>
+					<b th:text="*{nombre + ' ' + apellido}">
+					</b>
+				</td>
+			</tr>
+			<tr>
+				<th>Dirección</th>
+					<td th:text="*{direccion}" /></td>
+			</tr>
+			<tr>
+				<th>Ciudad</th>
+				<td th:text="*{ciudad}" /></td>
+			</tr>
+			<tr>
+				<th>Telephone</th>
+				<td th:text="*{telefono}" /></td>
+			</tr>
+		</table>
+		
+		<a th:href="@{{id}/editar(id=${duenio.id})}" class="btn btn-default">
+			Editar Duenio
+    	</a>
+    	<a th:href="@{{id}/mascotas/nuevo(id=${duenio.id})}" class="btn btn-default">
+    		Agregar nueva Mascota
+    	</a>
+		<br />
+		<br />
+		<br />
+		
+		<h2>Mascotas y visitas</h2>
+		
+		<table class="table table-striped">
+			<tr th:each="mascota : ${duenio.mascotas}">
+				<td valign="top">
+					<dl class="dl-horizontal">
+						<dt>Nombre mascota</dt>
+						<dd th:text="${mascota.nombre}" /></dd>
+						<dt>Fecha de nacimiento</dt>
+						<dd
+							th:text="${#temporals.format(mascota.fechaNacimiento, 'yyyy-MM-dd')}"
+						/>
+						</dd>
+						<dt>Tipo</dt>
+						<dd th:text="${mascota.tipoMascota}" /></dd>
+					</dl>
+				</td>
+				
+				<td valign="top">
+					<table class="table-condensed">
+						<thead>
+							<tr>
+								<th>Fecha de visita</th>
+								<th>Descripción</th>
+							</tr>
+						</thead>
+						<tr th:each="visita : ${mascota.visitas}">
+							<td th:text="${#temporals.format(visita.fecha, 'yyyy-MM-dd')}"></td>
+							<td th:text="${visit?.descripcion}"></td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									th:href="@{{duenioId}/mascotas/{mascotaId}/editar(duenioId=${duenio.id},mascotaId=${mascota.id})}"
+								>
+							    	Editar Mascota
+							    </a>
+							</td>
+							<td>
+								<a
+									th:href="@{{duenioId}/mascotas/{mascotaId}/visitas/new(duenioId=${duenio.id},mascotaId=${mascota.id})}"
+								>
+									Agregar Visita
+								</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	
+	</body>
+</html>
