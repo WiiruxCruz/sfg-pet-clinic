@@ -1,6 +1,7 @@
 package mx.com.wiirux.sfgpetclinic.services.springdatajpa;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -90,4 +91,11 @@ public class DuenioSDJpaService implements DuenioService{
 		return dr.findByApellido(apellido);
 	}
 	
+	
+	@Override
+	public List<Duenio> buscarPorApellidoLike(String apellido) {
+		// TODO Auto-generated method stub
+		//NOTA: Aqui me paso lo mismo que el metodo de buscarPorApellido
+		return dr.findAllByApellidoLike(apellido);
+	}
 }

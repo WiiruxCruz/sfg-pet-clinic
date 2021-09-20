@@ -1,5 +1,6 @@
 package mx.com.wiirux.sfgpetclinic.services.map;
 
+import java.util.List;
 import java.util.Set;
 
 import mx.com.wiirux.sfgpetclinic.model.Duenio;
@@ -93,6 +94,14 @@ public class DuenioServiceMap extends AbstractMapService<Duenio, Long> implement
 				.findFirst()
 				.orElse(null)
 				;
+	}
+
+	@Override
+	public List<Duenio> buscarPorApellidoLike(String apellido) {
+		// TODO Auto-generated method stub
+		
+		//todo - impl
+		return null;
 	}
 	
 	

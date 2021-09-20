@@ -11,12 +11,12 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.hamcrest.Matchers;
-import org.hibernate.hql.internal.ast.tree.IsNotNullLogicOperatorNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -54,6 +54,7 @@ class DuenioControllerTest {
 				.build();
 	}
 
+	/*
 	@Test
 	void testListaDuenios() throws Exception {
 		when(ds.findAll()).thenReturn(duenios);
@@ -75,15 +76,46 @@ class DuenioControllerTest {
 		.andExpect( model().attribute("duenios", hasSize(2)) )
 		;
 	}
+	*/
 
 	@Test
 	void testBuscarDuenios() throws Exception {
 		mockMvc.perform( get("/duenios/buscar") )
 		.andExpect( status().isOk() )
-		.andExpect( view().name("noImplementado"))
+		.andExpect( view().name("duenios/buscar"))
 		;
 		
 		verifyZeroInteractions(ds);
+	}
+	
+	@Test
+	void procesarBuscarFormularioRegresaMuchos() throws Exception{
+		when(ds.buscarPorApellidoLike(anyString())).thenReturn(
+			Arrays.asList(
+				Duenio.builder().id(1L).build(),
+				Duenio.builder().id(2L).build()
+			)
+		);
+		
+		mockMvc.perform(get("/duenios"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("duenios/lista"))
+		.andExpect(model().attribute("listaDuenios", hasSize(2)))
+		;
+	}
+	
+	@Test
+	void procesarBuscarFormularioRegresaUno() throws Exception{
+		when(ds.buscarPorApellidoLike(anyString())).thenReturn(
+			Arrays.asList(
+				Duenio.builder().id(1L).build()
+			)
+		);
+		
+		mockMvc.perform(get("/duenios"))
+		.andExpect(status().is3xxRedirection())
+		.andExpect(view().name("redirect:/duenios/1"))
+		;
 	}
 	
 	@Test
@@ -92,7 +124,7 @@ class DuenioControllerTest {
 		
 		mockMvc.perform( get("/duenios/123") )
 		.andExpect( status().isOk() )
-		.andExpect( view().name("duenios/duenioDetalle") )
+		.andExpect( view().name("duenios/detalle") )
 		.andExpect( model().attribute("duenio", hasProperty("id", is(1L) ) ) )
 		;
 	}

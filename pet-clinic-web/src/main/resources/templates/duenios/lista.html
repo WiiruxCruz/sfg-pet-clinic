@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'duenios')}"
+>
+	<body>
+		<h2>Duenios</h2>
+		<table
+			id="duenios"
+			class="table table-striped"
+		>
+        	<thead>
+				<tr>
+					<th style="width: 150px;">Nombre</th>
+					<th style="width: 200px;">Direccion</th>
+					<th>Ciudad</th>
+					<th style="width: 120px">Telefono</th>
+					<th>Mascotas</th>
+				</tr>
+        	</thead>
+        	<tbody>
+        		<tr th:each="duenio : ${lista}">
+        			<td>
+        				<a
+        					th:href="@{/duenios/__${duenio.id}__}"
+        					th:text="${duenio.nombre + ' ' + duenio.apellido}"
+        				/></a>
+        			</td>
+        			<td th:text="${duenio.direccion}"/>
+        			<td th:text="${duenio.ciudad}"/>
+        			<td th:text="${duenio.telefono}"/>
+        			<td>
+        				<span
+        					th:each="mascota : ${duenio.mascotas}"
+        					th:text="${mascota.nombre} "
+        				></span>
+        			</td>
+        		</tr>
+        	</tbody>
+        </table>
+	</body>
+</html>
