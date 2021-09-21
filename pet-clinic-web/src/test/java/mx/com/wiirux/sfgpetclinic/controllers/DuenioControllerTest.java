@@ -1,9 +1,11 @@
 package mx.com.wiirux.sfgpetclinic.controllers;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -20,6 +22,7 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -127,5 +130,52 @@ class DuenioControllerTest {
 		.andExpect( view().name("duenios/detalle") )
 		.andExpect( model().attribute("duenio", hasProperty("id", is(1L) ) ) )
 		;
+	}
+	
+	@Test
+	void iniciarCreacionFormulario() throws Exception {
+		mockMvc.perform(get("/duenios/nuevo"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("duenios/formularioCrearOActualizar"))
+		.andExpect(model().attributeExists("duenio"))
+		;
+		
+		verifyZeroInteractions(ds);
+	}
+	
+	@Test
+	void procesarCreacionFormulario() throws Exception{
+		when(ds.save(ArgumentMatchers.any())).thenReturn(Duenio.builder().id(1L).build());
+		mockMvc.perform(post("/duenios/nuevo"))
+		.andExpect(status().is3xxRedirection())
+		.andExpect(view().name("redirect:/duenios/1"))
+		.andExpect(model().attributeExists("duenio"))
+		;
+		
+		verify(ds).save(ArgumentMatchers.any());
+	}
+	
+	@Test
+	void iniciarActualizacionDuenioFormulario() throws Exception {
+		when(ds.findById(anyLong())).thenReturn(Duenio.builder().id(1L).build());
+		mockMvc.perform(get("/duenios/1/editar"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("duenios/formularioCrearOActualizar"))
+			.andExpect(model().attributeExists("duenio"))
+			;
+		verifyZeroInteractions(ds);
+	}
+	
+	@Test
+	void procesarActualizarDuenioFormulario() throws Exception{
+		when(ds.save(ArgumentMatchers.any())).thenReturn(Duenio.builder().id(1L).build());
+		
+		mockMvc.perform(post("/duenios/1/editar"))
+		.andExpect(status().is3xxRedirection())
+		.andExpect(view().name("redirect:/duenios/1"))
+		.andExpect(model().attributeExists("duenio"))
+		;
+		
+		verify(ds).save(ArgumentMatchers.any());
 	}
 }

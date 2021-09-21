@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'duenios')}"
+>
+	<body>
+		<h2>Duenios</h2>
+		<form
+			th:object="${duenio}"
+			class="form-horizontal"
+			id="add-duenio-form"
+			method="post"
+		>
+			<div class="form-group has-feedback">
+				<input
+					th:replace="~{fragments/inputField :: input('Nombre','nombre','text')}"
+				/>
+				
+				<input
+					th:replace="~{fragments/inputField :: input('Apellido','apellido','text')}"
+				/>
+				
+				<input
+					th:replace="~{fragments/inputField :: input('Direccion','direccion','text')}"
+				/>
+				
+				<input
+					th:replace="~{fragments/inputField :: input('Ciudad','ciudad','text')}"
+				/>
+				
+				<input
+					th:replace="~{fragments/inputField :: input('Telefono','telefono','text')}"
+				/>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button
+						th:with="text=${duenio['new']} ? 'Agregar Duenio' : 'Actualizar Duenio'"
+						class="btn btn-default"
+						type="submit"
+						th:text="${text}"
+					>
+						Agregar duenio
+					</button>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

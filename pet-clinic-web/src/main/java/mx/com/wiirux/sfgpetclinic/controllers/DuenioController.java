@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,6 +20,7 @@ import mx.com.wiirux.sfgpetclinic.services.DuenioService;
 @RequestMapping("/duenios")
 @Controller
 public class DuenioController {
+	private static final String VISTA_DUENIOS_CREAR_O_ACTUALIZAR_FORM = "duenios/formularioCrearOActualizar";
 	
 	private final DuenioService ds;
 	
@@ -78,5 +81,43 @@ public class DuenioController {
 		mav.addObject(this.ds.findById(duenioId));
 		
 		return mav;
+	}
+	
+	@GetMapping("/nuevo")
+	public String iniciarCreacionFormulario(Model model) {
+		Duenio duenio = Duenio.builder().build();
+		model.addAttribute("duenio", duenio);
+		return VISTA_DUENIOS_CREAR_O_ACTUALIZAR_FORM;
+	}
+	
+	@PostMapping("/nuevo")
+	public String procesarCreacionFormulario(@Validated Duenio duenio, BindingResult resultado) {
+		if(resultado.hasErrors()) {
+			return VISTA_DUENIOS_CREAR_O_ACTUALIZAR_FORM;
+		} else {
+			Duenio duenioGuardado = ds.save(duenio);
+			return "redirect:/duenios/" + duenioGuardado.getId();
+		}
+	}
+	
+	@GetMapping("/{duenioId}/editar")
+	public String iniciarActualizacionDuenioFormulario(@PathVariable("duenioId") Long duenioId, Model model) {
+		model.addAttribute(ds.findById(duenioId));
+		return VISTA_DUENIOS_CREAR_O_ACTUALIZAR_FORM;
+	}
+	
+	@PostMapping("/{duenioId}/editar")
+	public String procesarActualizacionDuenioFormulario(
+		@Validated Duenio duenio,
+		BindingResult resultado,
+		@PathVariable("duenioId") Long duenioId
+	) {
+		if(resultado.hasErrors()) {
+			return VISTA_DUENIOS_CREAR_O_ACTUALIZAR_FORM;
+		} else {
+			duenio.setId(duenioId);
+			Duenio duenioGuardado = ds.save(duenio);
+			return "redirect:/duenios/" + duenioGuardado.getId();
+		}
 	}
 }
