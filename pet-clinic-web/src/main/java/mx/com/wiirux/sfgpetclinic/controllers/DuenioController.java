@@ -54,7 +54,7 @@ public class DuenioController {
 		}
 		
 		//buscar duenio por apellido
-		List<Duenio> resultados = ds.buscarPorApellidoLike(duenio.getApellido());
+		List<Duenio> resultados = ds.buscarPorApellidoLike( "%" + duenio.getApellido() + "%");
 		
 		if(resultados.isEmpty()) {
 			//no found
