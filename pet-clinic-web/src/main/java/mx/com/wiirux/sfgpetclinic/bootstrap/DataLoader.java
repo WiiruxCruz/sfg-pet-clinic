@@ -53,7 +53,7 @@ public class DataLoader implements CommandLineRunner{
 		TipoMascota savedDogPetTipoMascota = tms.save(perro);
 		
 		TipoMascota gato = new TipoMascota();
-		perro.setTipo("gato");
+		gato.setTipo("gato");
 		TipoMascota savedCatPetTipoMascota = tms.save(gato);
 		System.out.println("Mascotas cargadas...");
 		
@@ -99,14 +99,14 @@ public class DataLoader implements CommandLineRunner{
 		d2.setNombre("Fiona");
 		d2.setApellido("Glenanne");
 		d2.setDireccion("Bougambilias 490");
-		d2.setDireccion("Veracruz");
+		d2.setCiudad("Veracruz");
 		d2.setTelefono("2295508085");
 		
 		Mascota m2 = new Mascota();
+		m2.setTipoMascota(savedCatPetTipoMascota);
 		m2.setNombre("Gatito");
 		m2.setDuenio(d2);
 		m2.setFechaNacimiento(LocalDate.now());
-		m2.setTipoMascota(savedCatPetTipoMascota);
 		d2.getMascotas().add(m2);
 		
 		ds.save(d2);
