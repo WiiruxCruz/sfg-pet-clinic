@@ -1,7 +1,5 @@
 package mx.com.wiirux.sfgpetclinic.model;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -20,6 +18,13 @@ import lombok.Setter;
 @Entity
 @Table(name = "tipoMascota")
 public class TipoMascota extends BaseEntity{
+	
+	@Builder
+	public TipoMascota(Long id, String tipo) {
+		super(id);
+		this.tipo = tipo;
+	}
+	
 	@Column(name = "tipo")
 	private String tipo;
 

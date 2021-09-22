@@ -22,10 +22,26 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "mascotas")
 public class Mascota extends BaseEntity{
+	
+	@Builder
+	public Mascota(
+		Long id,
+		String nombre,
+		TipoMascota tipoMascota,
+		Duenio duenio,
+		LocalDate fechaNacimiento,
+		Set<Visita> visitas
+	) {
+		super(id);
+		this.nombre = nombre;
+		this.tipoMascota = tipoMascota;
+		this.duenio = duenio;
+		this.fechaNacimiento = fechaNacimiento;
+		this.visitas = visitas;
+	}
 	
 	@Column(name = "nombre")
 	private String nombre;

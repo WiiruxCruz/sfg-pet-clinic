@@ -18,7 +18,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "duenio")
+@Table(name = "duenios")
 public class Duenio extends Persona {
 	@Column(name = "direccion")
 	private String direccion;
@@ -39,6 +39,32 @@ public class Duenio extends Persona {
 		this.direccion = direccion;
 		this.ciudad = ciudad;
 		this.telefono = telefono;
-		this.mascotas = mascotas;
+		if(mascotas != null) {
+			this.mascotas = mascotas;
+		}
+	}
+	
+	/*
+	 * Regresa la mascota con el nombre indicado o nulo si no se encuentra para este duenio
+	*/
+	public Mascota getMascota(String nombre) {
+		return getMascota(nombre, false);
+	}
+	
+	/*
+	 * Regresa la mascota con el nombre indicado o nulo si no se encuentra para este duenio
+	*/
+	public Mascota getMascota(String nombre, boolean ignorarNuevo) {
+		nombre = nombre.toLowerCase();
+		for(Mascota mascota : this.mascotas) {
+			if(!ignorarNuevo || !mascota.isNew()) {
+				String compararNombre = mascota.getNombre();
+				compararNombre = compararNombre.toLowerCase();
+				if(compararNombre.equals(nombre)) {
+					return mascota;
+				}
+			}
+		}
+		return null;
 	}
 }

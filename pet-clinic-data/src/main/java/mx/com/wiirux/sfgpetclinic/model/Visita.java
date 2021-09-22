@@ -22,7 +22,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "visita")
+@Table(name = "visitas")
 public class Visita extends BaseEntity{
 	
 	@Column(name = "fecha")

@@ -70,7 +70,8 @@
 							</tr>
 						</thead>
 						<tr th:each="visita : ${mascota.visitas}">
-							<td th:text="${#temporals.format(visita.fecha, 'yyyy-MM-dd')}"></td>
+							<!-- Este campo se queda como date porque así esta definida en la clase Visita (en lugar de fecha) -->
+							<td th:text="${#temporals.format(visita.date, 'yyyy-MM-dd')}"></td>
 							<td th:text="${visit?.descripcion}"></td>
 						</tr>
 						<tr>
