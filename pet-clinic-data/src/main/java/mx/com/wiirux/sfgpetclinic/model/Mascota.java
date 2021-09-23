@@ -40,7 +40,9 @@ public class Mascota extends BaseEntity{
 		this.tipoMascota = tipoMascota;
 		this.duenio = duenio;
 		this.fechaNacimiento = fechaNacimiento;
-		this.visitas = visitas;
+		if(this.visitas == null || this.visitas.size() > 0) {
+			this.visitas = visitas;
+		}
 	}
 	
 	@Column(name = "nombre")
