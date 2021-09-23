@@ -72,6 +72,7 @@ public class MascotaController {
 	public String iniciarCreacionFormulario(Duenio duenio, Model model) {
 		Mascota mascota = new Mascota();
 		duenio.getMascotas().add(mascota);
+		mascota.setDuenio(duenio);
 		model.addAttribute("mascota", mascota);
 		return VISTA_MASCOTA_CREAR_O_ACTUALIZAR_FORM;
 	}
@@ -91,7 +92,8 @@ public class MascotaController {
 			resultado.rejectValue("nombre", "duplicado", "ya existe uno anterior");
 			
 		}
-		duenio.getMascotas().add(mascota);
+		//duenio.getMascotas().add(mascota);
+		mascota.setDuenio(duenio);
 		if(resultado.hasErrors()) {
 			model.put("mascota", mascota);
 			return VISTA_MASCOTA_CREAR_O_ACTUALIZAR_FORM;
