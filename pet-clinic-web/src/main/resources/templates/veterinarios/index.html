@@ -11,19 +11,28 @@
 <body>
 	<!--/*@thymesVar id="veterinario" type="mx.com.wiirux.sfgpetclinic.model.Veterinario"*/-->
 	<h2 th:text="'Lista de Veterinarios'">Lista de Veterinarios...</h2>
-	<table class="table table-striped">
+	<table id="veterinarios" class="table table-striped">
 		<thead>
 			<tr>
-				<th>ID</th>
 				<th>Nombre</th>
-				<th>Apellido</th>
+				<th>Especialidad</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="veterinario : ${veterinarios}">
-				<td th:text="${veterinario.id}">1</td>
-				<td th:text="${veterinario.nombre}">Joe</td>
-				<td th:text="${veterinario.apellido}">Buck</td>
+				<td th:text="${veterinario.nombre + ' ' + veterinario.apellido}">Joe</td>
+				<td>
+					<span
+						th:each="especialidad : ${veterinario.especialidades}"
+						th:text="${especialidad.description + ' '}"
+					>
+					</span>
+					<span
+						th:if="${veterinario?.especialidades?.size() == 0}"
+					>
+						Ninguna
+					</span>
+				</td>
 			</tr>
 		</tbody>
 	</table>
