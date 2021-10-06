@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -57,6 +59,7 @@ public class Mascota extends BaseEntity{
 	private Duenio duenio;
 	
 	@Column(name = "fechaNacimiento")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaNacimiento;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "mascota")
