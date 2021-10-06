@@ -1,5 +1,13 @@
 package mx.com.wiirux.sfgpetclinic.controllers;
 
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyEditor;
+import java.beans.PropertyEditorSupport;
+import java.time.LocalDate;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +43,13 @@ public class VisitaController {
 	@InitBinder
 	public void establecerCamposPermitidos(WebDataBinder dataBinder) {
 		dataBinder.setDisallowedFields("id");
+		
+		dataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+			@Override
+			public void setAsText(String text) throws IllegalArgumentException{
+				setValue(LocalDate.parse(text));
+			}
+		});
 	}
 	
 	/**
