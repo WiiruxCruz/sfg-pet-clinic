@@ -122,6 +122,24 @@ class DuenioControllerTest {
 	}
 	
 	@Test
+	void procesarBusquedaFormEmptyRegresaMuchos() throws Exception {
+		when(ds.buscarPorApellidoLike(anyString()))
+		.thenReturn(
+			Arrays.asList(
+				Duenio.builder().id(1L).build(),
+				Duenio.builder().id(2L).build()
+			)
+		)
+		;
+		
+		mockMvc.perform(get("/duenios").param("apellido", ""))
+		.andExpect(status().isOk())
+		.andExpect(view().name("duenios/lista"))
+		.andExpect(model().attribute("listaDuenios", hasSize(2)))
+		;
+	}
+	
+	@Test
 	void testMostrarDuenio() throws Exception {
 		when(ds.findById(anyLong())).thenReturn(Duenio.builder().id(1L).build());
 		
